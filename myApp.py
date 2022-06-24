@@ -134,11 +134,14 @@ def fetch_AC_Data(siteID, startDate,endDate,):
     #response.set_index("timestamp", inplace=True)
     
     return response, ac_grouped ,
+
+
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
         return None
     return r.json()
+
 def date_to_str(date,format):
     date = date.dt.strftime(format)
     return date
